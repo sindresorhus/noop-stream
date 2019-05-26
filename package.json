@@ -1,0 +1,49 @@
+{
+	"name": "noop-stream",
+	"version": "0.0.0",
+	"description": "Create a readable Node.js stream that produces no data (or optionally blank data) or a writable stream that discards data",
+	"license": "MIT",
+	"repository": "sindresorhus/noop-stream",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"stream",
+		"readable",
+		"writable",
+		"readablestream",
+		"writablestream",
+		"noop",
+		"empty",
+		"dev",
+		"null",
+		"devnull",
+		"blank",
+		"drain",
+		"test",
+		"testing",
+		"fixture"
+	],
+	"dependencies": {
+		"type-fest": "^0.5.2"
+	},
+	"devDependencies": {
+		"@types/node": "^12.0.2",
+		"ava": "^1.4.1",
+		"get-stream": "^5.1.0",
+		"tsd": "^0.7.3",
+		"xo": "^0.24.0"
+	}
+}
