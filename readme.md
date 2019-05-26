@@ -2,7 +2,7 @@
 
 > Create a readable Node.js stream that produces no data (or optionally blank data) or a writable stream that discards data
 
-This can be useful for testing, fixtures, draining a stream, etc.
+This can be useful for testing, fixtures, draining a stream, etc. [(Example)](https://github.com/sindresorhus/file-type/commit/7d14761b757912bccc464fc3fb86398f2a533999)
 
 It's like `/dev/null` but cross-platform.
 
