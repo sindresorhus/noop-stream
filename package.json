@@ -1,6 +1,6 @@
 {
 	"name": "noop-stream",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Create a readable Node.js stream that produces no data (or optionally blank data) or a writable stream that discards data",
 	"license": "MIT",
 	"repository": "sindresorhus/noop-stream",
