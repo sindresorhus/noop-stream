@@ -4,7 +4,7 @@
 
 This can be useful for testing, fixtures, draining a stream, etc. [(Example)](https://github.com/sindresorhus/file-type/commit/7d14761b757912bccc464fc3fb86398f2a533999)
 
-It's like `/dev/null` but cross-platform.
+It's like `fs.createReadStream('/dev/null')` but cross-platform.
 
 
 ## Install
