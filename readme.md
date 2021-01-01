@@ -1,4 +1,4 @@
-# noop-stream [![Build Status](https://travis-ci.com/sindresorhus/noop-stream.svg?branch=master)](https://travis-ci.com/sindresorhus/noop-stream)
+# noop-stream
 
 > Create a readable Node.js stream that produces no data (or optionally blank data) or a writable stream that discards data
 
