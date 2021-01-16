@@ -34,7 +34,7 @@ module.exports.readableNoopStream = ({size = 0, ...options} = {}) => {
 };
 
 module.exports.writableNoopStream = options => (
-	new WritableStream({
+	return new WritableStream({
 		...options,
 		write(chunk, encding, callback) {
 			setImmediate(callback);
