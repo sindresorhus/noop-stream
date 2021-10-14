@@ -1,10 +1,10 @@
-'use strict';
-const {
-	Readable: ReadableStream,
-	Writable: WritableStream
-} = require('stream');
+import {
+	Readable as ReadableStream,
+	Writable as WritableStream,
+} from 'node:stream';
+import {Buffer} from 'node:buffer';
 
-module.exports.readableNoopStream = ({size = 0, ...options} = {}) => {
+export function readableNoopStream({size = 0, ...options} = {}) {
 	let producedSize = 0;
 
 	return new ReadableStream({
@@ -29,15 +29,15 @@ module.exports.readableNoopStream = ({size = 0, ...options} = {}) => {
 					this.push(null);
 				}
 			});
-		}
+		},
 	});
-};
+}
 
-module.exports.writableNoopStream = options => (
-	new WritableStream({
+export function writableNoopStream(options) {
+	return new WritableStream({
 		...options,
 		write(chunk, encding, callback) {
 			setImmediate(callback);
-		}
-	})
-);
+		},
+	});
+}

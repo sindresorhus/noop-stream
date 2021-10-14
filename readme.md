@@ -6,30 +6,27 @@ This can be useful for testing, fixtures, draining a stream, etc. [(Example)](ht
 
 It's like `fs.createReadStream('/dev/null')` but cross-platform.
 
-
 ## Install
 
+```sh
+npm install noop-stream
 ```
-$ npm install noop-stream
-```
-
 
 ## Usage
 
 ```js
-const stream = require('stream');
-const {readableNoopStream} = require('noop-stream');
+import stream from 'stream';
+import {readableNoopStream} from 'noop-stream';
 
 stream.pipeline(readableNoopStream({size: 10}), process.stdout);
 ```
 
 ```js
-const stream = require('stream');
-const {writableNoopStream} = require('noop-stream');
+import stream from 'stream';
+import {writableNoopStream} from 'noop-stream';
 
 stream.pipeline(process.stdin, writableNoopStream());
 ```
-
 
 ## API
 
@@ -46,7 +43,6 @@ You can also specify a `size` option, which is the size in bytes to produce. By 
 Create a writable Node.js stream that discards received data.
 
 Options are passed to the [`stream.Writable` constructor](https://nodejs.org/api/stream.html#stream_constructor_new_stream_writable_options), except for the `write` option.
-
 
 ## Related
 

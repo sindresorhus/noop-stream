@@ -1,22 +1,20 @@
-/// <reference types="node"/>
 import {
-	ReadableOptions as ReadableStreamOptions,
-	WritableOptions as WritableStreamOptions
-} from 'stream';
-import {Omit} from 'type-fest';
+	ReadableOptions as ReadableNodeStreamOptions,
+	WritableOptions as WritableNodeStreamOptions,
+} from 'node:stream';
 
-declare namespace readableNoopStream {
-	interface Options extends Omit<ReadableStreamOptions, 'read'> {
-		/**
-		The amount of data to stream in bytes.
+export interface ReadableStreamOptions extends Omit<ReadableNodeStreamOptions, 'read'> {
+	/**
+	The amount of data to stream in bytes.
 
-		Set it to `Infinity` to make it produce data until you manually destroy the stream.
+	Set it to `Infinity` to make it produce data until you manually destroy the stream.
 
-		@default 0
-		*/
-		readonly size?: number;
-	}
+	@default 0
+	*/
+	readonly size?: number;
 }
+
+export interface WritableStreamOptions extends Omit<WritableNodeStreamOptions, 'write'> {}
 
 /**
 Create a readable Node.js stream that produces no data (or optionally blank data).
@@ -29,11 +27,7 @@ import {readableNoopStream} from 'noop-stream';
 stream.pipeline(readableNoopStream({size: 10}), process.stdout);
 ```
 */
-export function readableNoopStream(options?: readableNoopStream.Options): NodeJS.ReadableStream;
-
-declare namespace writableNoopStream {
-	interface Options extends Omit<WritableStreamOptions, 'write'> {}
-}
+export function readableNoopStream(options?: ReadableStreamOptions): NodeJS.ReadableStream;
 
 /**
 Create a writable Node.js stream that discards received data.
@@ -46,4 +40,4 @@ import {writableNoopStream} from 'noop-stream';
 stream.pipeline(process.stdin, writableNoopStream());
 ```
 */
-export function writableNoopStream(options?: writableNoopStream.Options): NodeJS.WritableStream;
+export function writableNoopStream(options?: WritableStreamOptions): NodeJS.WritableStream;
