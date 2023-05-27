@@ -21,7 +21,7 @@ Create a readable Node.js stream that produces no data (or optionally blank data
 
 @example
 ```
-import stream from 'stream';
+import stream from 'node:stream';
 import {readableNoopStream} from 'noop-stream';
 
 stream.pipeline(readableNoopStream({size: 10}), process.stdout);
@@ -34,7 +34,7 @@ Create a writable Node.js stream that discards received data.
 
 @example
 ```
-import stream from 'stream';
+import stream from 'node:stream';
 import {writableNoopStream} from 'noop-stream';
 
 stream.pipeline(process.stdin, writableNoopStream());

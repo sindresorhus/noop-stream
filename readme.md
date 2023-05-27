@@ -15,14 +15,14 @@ npm install noop-stream
 ## Usage
 
 ```js
-import stream from 'stream';
+import stream from 'node:stream';
 import {readableNoopStream} from 'noop-stream';
 
 stream.pipeline(readableNoopStream({size: 10}), process.stdout);
 ```
 
 ```js
-import stream from 'stream';
+import stream from 'node:stream';
 import {writableNoopStream} from 'noop-stream';
 
 stream.pipeline(process.stdin, writableNoopStream());
